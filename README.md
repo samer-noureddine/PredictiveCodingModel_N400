@@ -1,5 +1,5 @@
 # PredictiveCodingModel_N400
-Code for the paper:
+This repository contains the code to reproduce the simulations and statistical analyses in the paper:
 
 Nour Eddine, S., Brothers T., Wang L., Spratling, M., Kuperberg G., (under review). A predictive coding model of the N400.
 ## Abstract
