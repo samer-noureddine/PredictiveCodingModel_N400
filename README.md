@@ -30,16 +30,17 @@ To reproduce the simulations, navigate to the directory where you have downloade
    This will run the simulations and save the results as csv files in `./data/`; and it will reproduce Figures 4, 5, 6, and 8 and save them in `./plots/`. The data and plots have been pre-computed and uploaded to [OSF](https://osf.io/f7upd/?view_only=21226cf9fa9e416e80177242ac17bc72).
 ## Expected outputs
 If the code runs smoothly, the following plots should be saved in `./plots/`:
-![Fig4A](https://github.com/samer-noureddine/PredictiveCodingModel_N400/tree/main/precomputed_plots/Fig4A_ONsize_total_lexsem_PE.png?raw=true)
-![Fig4B](https://github.com/samer-noureddine/PredictiveCodingModel_N400/tree/main/precomputed_plots/Fig4B_ONsize_Psd_total_lexsem_PE.png?raw=true)
-![Fig4C](https://github.com/samer-noureddine/PredictiveCodingModel_N400/tree/main/precomputed_plots/Fig4C_Frequency_total_lexsem_PE.png?raw=true)
-![Fig4D](https://github.com/samer-noureddine/PredictiveCodingModel_N400/tree/main/precomputed_plots/Fig4D_Richness_total_lexsem_PE.png?raw=true)
-![Fig5A](https://github.com/samer-noureddine/PredictiveCodingModel_N400/tree/main/precomputed_plots/Fig5A_rep_priming_total_lexsem_err.png?raw=true)
-![Fig5B](https://github.com/samer-noureddine/PredictiveCodingModel_N400/tree/main/precomputed_plots/Fig5B_sem_priming_total_lexsem_err.png?raw=true)
-![Fig6A](https://github.com/samer-noureddine/PredictiveCodingModel_N400/tree/main/precomputed_plots/Fig6A_cloze_simulations_total_lexsem_err.png?raw=true)
-![Fig6B](https://github.com/samer-noureddine/PredictiveCodingModel_N400/tree/main/precomputed_plots/Fig6B_lexical_violation_total_lexsem_err.png?raw=true)
-![Fig7A](https://github.com/samer-noureddine/PredictiveCodingModel_N400/tree/main/precomputed_plots/Fig7A_semantic_prediction_overlap_total_lexsem_err.png?raw=true)
-![Fig8AB](https://github.com/samer-noureddine/PredictiveCodingModel_N400/tree/main/precomputed_plots/Fig8AB_orthographic_prediction_overlap_total_lexsem_err.png?raw=true)
+![Fig4A](https://github.com/samer-noureddine/PredictiveCodingModel_N400/blob/main/precomputed_plots/Fig4A_ONsize_total_lexsem_PE.png?raw=true)
+![Fig4B](https://github.com/samer-noureddine/PredictiveCodingModel_N400/blob/main/precomputed_plots/Fig4B_ONsize_Psd_total_lexsem_PE.png?raw=true)
+![Fig4C](https://github.com/samer-noureddine/PredictiveCodingModel_N400/blob/main/precomputed_plots/Fig4C_Frequency_total_lexsem_PE.png?raw=true)
+![Fig4D](https://github.com/samer-noureddine/PredictiveCodingModel_N400/blob/main/precomputed_plots/Fig4D_Richness_total_lexsem_PE.png?raw=true)
+![Fig5A](https://github.com/samer-noureddine/PredictiveCodingModel_N400/blob/main/precomputed_plots/Fig5A_rep_priming_total_lexsem_err.png?raw=true)
+![Fig5B](https://github.com/samer-noureddine/PredictiveCodingModel_N400/blob/main/precomputed_plots/Fig5B_sem_priming_total_lexsem_err.png?raw=true)
+![Fig6A](https://github.com/samer-noureddine/PredictiveCodingModel_N400/blob/main/precomputed_plots/Fig6A_cloze_simulations_total_lexsem_err.png?raw=true)
+![Fig6B](https://github.com/samer-noureddine/PredictiveCodingModel_N400/blob/main/precomputed_plots/Fig6B_lexical_violation_total_lexsem_err.png?raw=true)
+![Fig7A](https://github.com/samer-noureddine/PredictiveCodingModel_N400/blob/main/precomputed_plots/Fig7A_semantic_prediction_overlap_total_lexsem_err.png?raw=true)
+![Fig8AB](https://github.com/samer-noureddine/PredictiveCodingModel_N400/blob/main/precomputed_plots/Fig8AB_orthographic_prediction_overlap_total_lexsem_err.png?raw=true)
+
 
 
 
