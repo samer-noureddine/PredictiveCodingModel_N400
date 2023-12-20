@@ -380,7 +380,7 @@ create_simulation_df(standard_simulation_withdummycondition,std_sim_conditions,'
 word_vs_psd_conditions = {}
 word_vs_psd_conditions['col_names'] = np.array(['IsWord'])
 word_vs_psd_conditions['factors'] = np.array([['Word'],['Pseudoword']])
-word_vs_psd_conditions['coding'] =  np.array([[1],[0]])
+word_vs_psd_conditions['coding'] =  np.array([[1],[-1]])
 create_simulation_df(word_vs_psd,word_vs_psd_conditions,'Word_vs_Pseudoword_Simulation')
 
 
