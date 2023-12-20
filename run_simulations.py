@@ -84,14 +84,18 @@ PE_vals = np.block([np.ones((num_trials,padding))*0.001, standard_simulation['si
 data_to_plot_ho = PE_vals[standard_words_highONsize,:].mean(axis = 0)
 data_to_plot_lo = PE_vals[standard_words_lowONsize,:].mean(axis = 0)
 # high vs low semantic richness
-data_to_plot_hc = PE_vals[standard_words_highfrequency,:].mean(axis = 0)
-data_to_plot_lc = PE_vals[standard_words_lowfrequency,:].mean(axis = 0)
+data_to_plot_hc = PE_vals[standard_words_highrichness,:].mean(axis = 0)
+data_to_plot_lc = PE_vals[standard_words_lowrichness,:].mean(axis = 0)
 # high vs low frequency
-data_to_plot_hf = PE_vals[standard_words_highrichness,:].mean(axis = 0)
-data_to_plot_lf = PE_vals[standard_words_lowrichness,:].mean(axis = 0)
+data_to_plot_hf = PE_vals[standard_words_highfrequency,:].mean(axis = 0)
+data_to_plot_lf = PE_vals[standard_words_lowfrequency,:].mean(axis = 0)
 
 
 def plot_lexsemPE_by_indices(data_with_high_indices, data_with_low_indices, factor_name):
+    figtitle_dict = {'ONsize': 'Fig4A',
+                'ONsize_Psd': 'Fig4B',
+                'Frequency': 'Fig4C',
+                'Richness': 'Fig4D'}
     plt.rcParams.update({'font.size': 22})
     fig = plt.figure(figsize=(12*1.3, 6*1.3))
     main_ax = fig.add_subplot()
@@ -105,12 +109,12 @@ def plot_lexsemPE_by_indices(data_with_high_indices, data_with_low_indices, fact
     main_ax.set_xticks(np.arange(-PRESTIMULUS_WINDOW+1, final_stim_duration+0.03, 5.0))
     main_ax.legend(fontsize = 12)
     main_ax.legend(loc='upper right', frameon=False)
-    plt.savefig(f'./plots/{factor_name}_total_lexsem_PE.png')
-    plt.savefig(f'./plots/{factor_name}_total_lexsem_PE.svg')
+    plt.savefig(f'./plots/{figtitle_dict[factor_name]}_{factor_name}_total_lexsem_PE.png')
+    plt.savefig(f'./plots/{figtitle_dict[factor_name]}_{factor_name}_total_lexsem_PE.svg')
 
-plot_lexsemPE_by_indices(data_to_plot_hc, data_to_plot_lc, 'Richness')
 plot_lexsemPE_by_indices(data_to_plot_ho, data_to_plot_lo, 'ONsize')
 plot_lexsemPE_by_indices(data_to_plot_hf, data_to_plot_lf, 'Frequency')
+plot_lexsemPE_by_indices(data_to_plot_hc, data_to_plot_lc, 'Richness')
 
 
 # Run the simulations for the 400 "base words" and 400 ONsize-matched pseudowords
@@ -201,7 +205,7 @@ orth_prediction_overlap_simulation = {orth_predoverlap_csv.keys()[i] : run_simul
 
 all_simulations = [rep_priming,sem_priming, cloze_simulations_bottomup, lexical_violation, semantic_prediction_overlap,orth_prediction_overlap_simulation]
 
-def simulation_accuracy_info(the_simulation, num_iters_target_presentation):
+def simulation_accuracy_info(the_simulation, num_iters_target_presentation=20):
     for condition in the_simulation.keys():
         # retrieve the activity of the most active lexical state for each trial, ie target input, at all iterations
         most_active_state_activity_per_trial = the_simulation[condition]['simulation_data']['max_lex_state_activation'][0][:,-num_iters_target_presentation:] #(num_trials,num_iterations)
@@ -277,24 +281,24 @@ def total_error_means(filename, simulation, max_yval, ordered_conditions = [],co
     plt.savefig(f'./plots/{filename}_total_lexsem_err.svg')
 
 
-total_error_means('rep_priming', rep_priming, max_yval_error, ordered_conditions = ['unrepeated','repeated'], labels = ['Non-repeated', 'Repeated'], condition_styles= ['k--','k-'])
-simulation_accuracy_info(rep_priming,20)
-total_error_means('sem_priming', sem_priming, max_yval_error, ordered_conditions = ['semunrelated','semrelated'],  labels = ['Unrelated', 'Related'], condition_styles= ['k--','k-'])
-simulation_accuracy_info(sem_priming,20)
-total_error_means('cloze_simulations', cloze_simulations_bottomup, max_yval_error, ordered_conditions = ['high_cloze', 'med_high_cloze', 'med_low_cloze', 'low_cloze'], labels = ['99% Cloze', '50% Cloze','25% Cloze', '0.06% Cloze'], condition_styles = ['k-', 'k--', 'k-.', 'k:'])
-simulation_accuracy_info(cloze_simulations_bottomup,20)
-total_error_means('lexical_violation', lexical_violation, max_yval_error, ordered_conditions = ['high_constraint_expected', 'high_constraint_unexpected', 'low_constraint_unexpected'], labels = ['99% Cloze', '99% Constraint Unexpected','0.06% Constraint Unexpected'], condition_styles = ['k-', 'r:', 'k:'],legend_loc = 'upper left')
-simulation_accuracy_info(lexical_violation,20)
-total_error_means('semantic_prediction_overlap', semantic_prediction_overlap, max_yval_error, ordered_conditions = ['high_constraint_expected','semrelated_99cloze', 'semunrelated_99cloze'],\
-     labels = ['Expected', '99% Constraint Related',  '99% Constraint Unrelated'], condition_styles = ['k-', 'k--', 'k:'],legend_loc = 'upper left')
-simulation_accuracy_info(semantic_prediction_overlap,20)
+total_error_means('Fig5A_rep_priming', rep_priming, max_yval_error, ordered_conditions = ['unrepeated','repeated'], labels = ['Non-repeated', 'Repeated'], condition_styles= ['k--','k-'])
+simulation_accuracy_info(rep_priming)
+total_error_means('Fig5B_sem_priming', sem_priming, max_yval_error, ordered_conditions = ['semunrelated','semrelated'],  labels = ['Unrelated', 'Related'], condition_styles= ['k--','k-'])
+simulation_accuracy_info(sem_priming)
+total_error_means('Fig6A_cloze_simulations', cloze_simulations_bottomup, max_yval_error, ordered_conditions = ['high_cloze', 'med_high_cloze', 'med_low_cloze', 'low_cloze'][::-1], labels = ['99% Cloze', '50% Cloze','25% Cloze', '0.06% Cloze'][::-1], condition_styles = ['k-', 'k--', 'k-.', 'k:'][::-1])
+simulation_accuracy_info(cloze_simulations_bottomup)
+total_error_means('Fig6B_lexical_violation', lexical_violation, max_yval_error, ordered_conditions = ['high_constraint_expected', 'high_constraint_unexpected', 'low_constraint_unexpected'][::-1], labels = ['99% Cloze', '99% Constraint Unexpected','0.06% Constraint Unexpected'][::-1], condition_styles = ['k-', 'r:', 'k:'][::-1],legend_loc = 'upper left')
+simulation_accuracy_info(lexical_violation)
+total_error_means('Fig7A_semantic_prediction_overlap', semantic_prediction_overlap, max_yval_error, ordered_conditions = ['high_constraint_expected','semrelated_99cloze', 'semunrelated_99cloze'][::-1],\
+     labels = ['Expected', '99% Constraint Related',  '99% Constraint Unrelated'][::-1], condition_styles = ['k-', 'k--', 'k:'][::-1],legend_loc = 'upper left')
+simulation_accuracy_info(semantic_prediction_overlap)
 
-total_error_means('orthographic_prediction_overlap', orth_prediction_overlap_simulation, max_yval_error, ordered_conditions = ['PseudowordNonNeighbors','WordNonNeighbors', 'PseudowordNeighbors', 'WordNeighbors'],\
+total_error_means('Fig8AB_orthographic_prediction_overlap', orth_prediction_overlap_simulation, max_yval_error, ordered_conditions = ['PseudowordNonNeighbors','WordNonNeighbors', 'PseudowordNeighbors', 'WordNeighbors'],\
      labels = ['Unrelated Pseudoword', 'Unrelated Word', 'Related Pseudoword','Related Word'], condition_styles = ['r:', 'k:', 'r--', 'k--'],legend_loc = 'upper left')
 orth_prediction_overlap_simulation_justwords = {}
 orth_prediction_overlap_simulation_justwords['WordNeighbors']  = orth_prediction_overlap_simulation['WordNeighbors']
 orth_prediction_overlap_simulation_justwords['WordNonNeighbors']  = orth_prediction_overlap_simulation['WordNonNeighbors']
-simulation_accuracy_info(orth_prediction_overlap_simulation_justwords,20)
+simulation_accuracy_info(orth_prediction_overlap_simulation_justwords)
 ##################### CREATE CSV DATA FROM ALL SIMULATIONS #####################
 
 def create_simulation_df(simulation, conditions_dict,simulation_name):
