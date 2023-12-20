@@ -13,8 +13,7 @@ nrm <- function(x) {
 }
 
 
-base = "D:\\PROJECTS\\PC_Paper\\PCLex_N400_Cognition\\simulation_csv_files\\"
-plotloc = "D:\\PROJECTS\\PC_Paper\\PCLex_N400_Cognition\\plots\\stats_plots\\"
+base = "[YOURPATH]\\simulation_csv_files\\"
 
 # load data
 std_sim= read_csv(paste(base, "Standard_Simulation_N400_2_to_11.csv", sep = ""))
