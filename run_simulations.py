@@ -1,10 +1,7 @@
 import os
-import pickle
 import random
-from operator import itemgetter
 import numpy as np
 import pandas as pd
-from scipy import stats
 
 from get_summary import *
 from orth_neighborhood_utils import *
