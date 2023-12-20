@@ -27,7 +27,7 @@ To reproduce the simulations, navigate to the directory where you have downloade
    ```
    python run_simulations.py
    ```
-   This will run the simulations and save the results as csv files in `./data/`; and it will reproduce Figures 4, 5, 6, and 8 and save them in `./plots/`. The data and plots have been pre-computed and uploaded to [OSF](https://osf.io/f7upd/?view_only=21226cf9fa9e416e80177242ac17bc72).
+   This will run the simulations and save the results as csv files in `./data/`; and it will reproduce Figures 4, 5, 6, and 8 and save them in `./plots/`. The data and plots have been pre-computed and uploaded to [OSF](https://osf.io/f7upd/?view_only=21226cf9fa9e416e80177242ac17bc72). After generating the simulation csv files, our analyses can be reproduced by running the `./simulation_csv_files/statistical_analysis.R` file in R.
 ## Expected outputs
 If the code runs smoothly, the following plots should be saved in `./plots/`:
 ![Fig4A](https://github.com/samer-noureddine/PredictiveCodingModel_N400/blob/main/precomputed_plots/Fig4A_ONsize_total_lexsem_PE.png?raw=true)
