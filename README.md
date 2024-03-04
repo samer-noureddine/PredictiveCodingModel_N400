@@ -1,13 +1,14 @@
 # PredictiveCodingModel_N400
 This repository contains the code to reproduce the simulations and statistical analyses in the paper:
 
-Nour Eddine, S., Brothers T., Wang L., Spratling, M., Kuperberg G., (under review). A predictive coding model of the N400.
+Nour Eddine, S., Brothers, T., Wang, L., Spratling, M., & Kuperberg, G. R. (2024). A predictive coding model of the N400. _Cognition_, 246, 105755.
+https://doi.org/10.1016/j.cognition.2024.105755
 ## Abstract
 The N400 event-related component has been widely used to investigate the neural mechanisms underlying real-time language comprehension. However, despite decades of research, there is still no unifying theory that can explain both its temporal dynamics and functional properties. In this work, we show that predictive coding – a biologically plausible algorithm for approximating Bayesian inference – offers a promising framework for characterizing the N400. Using an implemented predictive coding computational model, we demonstrate how the N400 can be formalized as the lexico-semantic prediction error produced as the brain infers meaning from linguistic form of incoming words. We show that the magnitude of lexico-semantic prediction error mirrors the functional sensitivity of the N400 to various lexical variables, priming, contextual effects, as well as their higher-order interactions. We further show that the dynamics of the predictive coding algorithm provide a natural explanation for the temporal dynamics of the N400, and a biologically plausible link to neural activity. Together, these findings directly situate the N400 within the broader context of predictive coding research, and suggest that the brain may use the same computational mechanism for inference across linguistic and non-linguistic domains.
 
 ## System Requirements
 
-- This code has been tested on Python 3.9.8 in Windows 11, taking roughly 45 minutes to run on a PC with i7-8700 CPU @ 3.20GHz, 3192 Mhz, 6 Cores, 12 Logical Processors, 16 GB RAM. This code is for documentation and reproducibility purposes. A faster version is being developed [here](https://github.com/wmvanvliet/predictive-coding), courtesy of Marijn van Vliet.
+- This code has been tested on Python 3.9.8 in Windows 11, taking roughly 45 minutes to run on a PC with i7-8700 CPU @ 3.20GHz, 3192 Mhz, 6 Cores, 12 Logical Processors, 16 GB RAM. This code is for documentation and reproducibility purposes. A faster version is being developed [here](https://github.com/wmvanvliet/predictive-coding/tree/main/examples/n400_simulation), courtesy of Marijn van Vliet.
 
 ### Software Dependencies:
 - Python 3.9
